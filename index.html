@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Invitación de Graduación 🎓 William Pérez</title>
+  <meta name="description" content="Invitación de William Rodrigo Pérez Galán a su graduación de Licenciatura en Sistemas Informáticos Administrativos." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&family=Great+Vibes&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --bg:#0b1020;
+      --panel:#0f1724cc;
+      --gold:#c9a24a;
+      --accent:#e6d8ad;
+      --muted:#cfd8e3;
+      --glass: rgba(255,255,255,0.05);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:'Poppins',system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:
+        radial-gradient(1200px 600px at 10% 20%, rgba(201,162,74,0.06), transparent 10%),
+        radial-gradient(1000px 500px at 90% 80%, rgba(230,216,173,0.04), transparent 12%),
+        var(--bg);
+      color:var(--muted);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      overflow:hidden;
+      padding:3rem 1rem;
+    }
+
+    /* Container card */
+    .wrap{display:flex;align-items:center;justify-content:center;min-height:calc(100vh - 2rem)}
+    .card{
+      width:100%;max-width:920px;background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.025));
+      border-radius:20px;padding:2.2rem;backdrop-filter:blur(6px);box-shadow:0 20px 60px rgba(2,6,23,0.7);
+      border:1px solid rgba(255,255,255,0.03);position:relative;overflow:visible;
+    }
+
+    .header{
+      display:flex;gap:1rem;align-items:center;justify-content:space-between;flex-wrap:wrap;
+    }
+    .left{
+      display:flex;flex-direction:column;gap:.25rem;
+    }
+    .badge{
+      display:inline-flex;align-items:center;gap:.6rem;padding:.4rem .85rem;border-radius:999px;
+      background: linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+      color:var(--accent);font-weight:700;font-size:.98rem;border:1px solid rgba(255,255,255,0.03)
+    }
+    .title{font-size:clamp(1.6rem,3.4vw,2.4rem);font-weight:900;color:var(--muted);margin:0}
+    .title span.script{display:block;font-family:'Great Vibes',cursive;color:var(--gold);font-size:1.05em;margin-top:.15rem}
+
+    .degree{margin-top:.45rem;color:rgba(255,255,255,0.85);font-weight:600}
+    .subtitle{color:rgba(255,255,255,0.72);font-weight:600;margin-top:.55rem }
+
+    .content{display:flex;gap:2rem;margin-top:1.2rem;align-items:flex-start;flex-wrap:wrap}
+    .leftCol{flex:1;min-width:280px}
+    .rightCol{width:320px;min-width:240px}
+
+    .panel{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:12px;padding:1.2rem;border:1px solid rgba(255,255,255,0.02);
+    }
+    .info p{margin:.4rem 0;font-size:1rem;color:var(--muted)}
+    .info p strong{color:var(--gold);font-weight:700}
+    .message{margin-top:1rem;line-height:1.6;color:rgba(255,255,255,0.9)}
+
+    .cta{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1rem}
+    .btn{border:0;padding:.7rem 1rem;border-radius:10px;font-weight:700;cursor:pointer;box-shadow:0 8px 20px rgba(2,6,23,0.6)}
+    .btn.primary{background:linear-gradient(90deg,var(--gold),#f4d87a);color:#081021}
+    .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+
+    .footerNote{margin-top:1rem;color:rgba(255,255,255,0.6);font-size:.95rem}
+
+    /* DECORATIVOS: globos, cintas y diplomas */
+    .decor{position:absolute;inset:0;pointer-events:none;overflow:visible}
+    .balloons{position:absolute;inset:-10% -5%  -10% -5%;z-index:0}
+    .balloon{
+      position:absolute;display:block;border-radius:50% 50% 50% 50% / 55% 55% 45% 45%;
+      transform-origin:center bottom;
+      box-shadow: inset -6px -10px 26px rgba(0,0,0,0.35), 0 8px 26px rgba(2,6,23,0.6);
+      opacity:.95;
+      animation:rise linear infinite;
+    }
+    .balloon::after{ /* la cinta */
+      content:"";
+      position:absolute;
+      left:50%;transform:translateX(-50%);
+      top:92%;
+      width:2px;height:86px;border-radius:2px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.2));
+      filter:blur(.2px);
+      box-shadow:0 6px 10px rgba(0,0,0,0.25);
+      transform-origin:top center;
+      animation:ribbon .9s ease-in-out infinite;
+    }
+
+    @keyframes ribbon{
+      0%{transform:translateX(-50%) rotate(-4deg)}
+      50%{transform:translateX(-50%) rotate(4deg)}
+      100%{transform:translateX(-50%) rotate(-4deg)}
+    }
+
+    @keyframes rise{
+      0%{transform:translateY(110vh) rotate(0deg) scale(0.95)}
+      100%{transform:translateY(-25vh) rotate(25deg) scale(1)}
+    }
+
+    /* Diplomas decorativos (pequeños) */
+    .diploma{
+      position:absolute;width:36px;height:28px;border-radius:6px;background:linear-gradient(180deg,#fff,#f0f0f0);
+      box-shadow:0 6px 16px rgba(2,6,23,0.6);
+      transform-origin:center;
+      opacity:.95;
+      animation:drift 10s linear infinite;
+    }
+    @keyframes drift{
+      0%{transform:translateY(110vh) rotate(0deg)}
+      100%{transform:translateY(-20vh) rotate(360deg)}
+    }
+
+    /* Make sure reduced motion respected */
+    @media (prefers-reduced-motion: reduce){
+      .balloon,.diploma,.gradient{animation:none}
+    }
+
+    /* Responsive tweaks */
+    @media (max-width:820px){
+      .rightCol{width:100%}
+      .card{padding:1.2rem}
+    }
+  </style>
+</head>
+<body>
+  <div class="decor">
+    <div class="gradient" style="position:absolute;inset:-20% -20%;filter:blur(40px);opacity:.9"></div>
+    <div class="balloons" id="balloons"></div>
+    <div id="diplomas"></div>
+  </div>
+
+  <div class="wrap">
+    <section class="card" role="main" aria-labelledby="title">
+      <div class="header">
+        <div class="left">
+          <div class="badge" aria-hidden="true">📅 6 de diciembre • 5:00 PM</div>
+          <h1 class="title" id="title">🎓Invitación Especial🎓 <span class="script" id="name">William Rodrigo Pérez Galán</span></h1>
+          <div class="degree" id="degree">Licenciatura en Sistemas Informáticos Administrativos</div>
+        </div>
+        <div style="text-align:left;-width:160px">
+          <div class="subtitle">¡Un logro para celebrar!</div>
+        </div>
+      </div>
+
+      <div class="content" role="region" aria-label="Detalles de invitación">
+        <div class="leftCol">
+          <div class="panel info" aria-hidden="false">
+            <p><strong>Fecha:</strong> 6 de diciembre</p>
+            <p><strong>Hora:</strong> 5:00 PM</p>
+            <p><strong>Lugar:</strong> Colonia Vuelta Grande, Mi Casa</p>
+
+            <div class="message" id="message">
+              Con mucha alegría, te invito a celebrar conmigo este logro tan importante.
+              Tu compañía hará de este día un recuerdo inolvidable.
+              ¡Te espero en mi casa! 💛
+            </div>
+
+            <div class="cta" style="margin-top:1rem">
+              <button class="btn primary" id="confettiBtn">¡Celebrar ahora!</button>
+              <button class="btn ghost" id="shareBtn">Compartir invitación</button>
+            </div>
+            <div class="footerNote">Toca la tarjeta o el botón para un pequeño lanzamiento de celebración 🎊</div>
+          </div>
+        </div>
+
+        <aside class="rightCol" aria-hidden="true">
+          <div class="panel" style="display:flex;flex-direction:column;gap:.6rem;align-items:center;justify-content:center;min-height:200px">
+            <div style="font-size:1.1rem;font-weight:700;color:var(--gold)">Graduación</div>
+            <div style="font-size:.95rem;color:rgba(255,255,255,0.75);text-align:center">Licenciatura en Sistemas Informáticos Administrativos</div>
+            <div style="margin-top:.8rem;color:rgba(255,255,255,0.8)">William Rodrigo Pérez Galán</div>
+            <div style="margin-top:1rem;font-size:.85rem;color:rgba(255,255,255,0.7)">Colonia Vuelta Grande, Mi Casa</div>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </div>
+
+  <!-- Confetti lib -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js" defer></script>
+
+  <script>
+    // CONFIG
+    const CONFIG = {
+      recipient: "William Rodrigo Pérez Galán",
+      degree: "Licenciatura en Sistemas Informáticos Administrativos",
+      dateText: "6 de diciembre | 5:00 PM",
+      location: "Colonia Vuelta Grande, Mi Casa",
+      colorsConfetti: ['#c9a24a','#ffffff','#2a6dff']
+    };
+
+    document.addEventListener('DOMContentLoaded', ()=>{
+      // Inject text
+      document.getElementById('name').textContent = CONFIG.recipient;
+      document.getElementById('degree').textContent = CONFIG.degree;
+      document.getElementById('message').textContent = CONFIG.lines ? CONFIG.lines.join(' ') : document.getElementById('message').textContent;
+      // Build decorative balloons and diplomas
+      const balloonsEl = document.getElementById('balloons');
+      const colors = ['#ffffff','#000000','#c0c0c0','#b87333']; // blanco, negro, plata, cobre
+      // Create balloons with random positions/sizes
+      for(let i=0;i<28;i++){
+        const b = document.createElement('div');
+        b.className='balloon';
+        const w = 28 + Math.random()*56; // width
+        const h = Math.round(w * 1.3);
+        b.style.width = w+'px';
+        b.style.height = h+'px';
+        b.style.left = (Math.random()*100) + 'vw';
+        b.style.top = (50 + Math.random()*50) + 'vh'; // start lower to rise
+        b.style.background = `linear-gradient(180deg, rgba(255,255,255,0.08), ${colors[Math.floor(Math.random()*colors.length)]})`;
+        b.style.animationDuration = (10 + Math.random()*12) + 's';
+        b.style.transform = `translateY(0) rotate(${Math.random()*20-10}deg)`;
+        // Ribbon color variation by slightly darker tone
+        const ribbon = document.createElement('span');
+        ribbon.style.position='absolute';
+        // use CSS ::after for ribbon visuals by setting a small inline style for top offset (to vary)
+        // but to keep everything consistent across browsers, we keep ribbon as pseudo via ::after on .balloon
+        // set a data attribute to control ribbon length
+        b.setAttribute('data-ribbon', String(70 + Math.random()*80)); // pixels
+        balloonsEl.appendChild(b);
+      }
+
+      // Diplomas
+      const diplomasEl = document.getElementById('diplomas');
+      for(let i=0;i<8;i++){
+        const d = document.createElement('div');
+        d.className='diploma';
+        d.style.left = (Math.random()*100) + 'vw';
+        d.style.top = (60 + Math.random()*40) + 'vh';
+        d.style.animationDuration = (8 + Math.random()*8) + 's';
+        d.style.transform = `rotate(${Math.random()*360}deg)`;
+        // add small red ribbon graphic inside diploma using innerHTML
+        d.innerHTML = '<svg viewBox="0 0 24 24" width="100%" height="100%" style="display:block"><rect x="2" y="4" width="20" height="14" rx="2" fill="#fff"/><rect x="4" y="9" width="12" height="2" rx="1" fill="#b87333"/><circle cx="18" cy="11" r="2.2" fill="#2a6dff"/></svg>';
+        diplomasEl.appendChild(d);
+      }
+
+      // After adding balloons, add CSS rules for ribbon lengths via a small style injection
+      const style = document.createElement('style');
+      style.innerHTML = `
+        .balloon::after{
+          height: 80px; /* fallback */
+        }
+      `;
+      document.head.appendChild(style);
+
+      // Now decorate each balloon's ::after length by injecting a small stylesheet per balloon index (works reliably)
+      // We'll instead set a CSS variable per balloon:
+      document.querySelectorAll('.balloon').forEach(b=>{
+        const length = b.dataset.ribbon || 80;
+        b.style.setProperty('--ribbon-h', `${length}px`);
+      });
+      // add CSS that uses the variable
+      const cssRibbon = document.createElement('style');
+      cssRibbon.innerHTML = `
+        .balloon::after{
+          content:"";
+          position:absolute;
+          left:50%;
+          top:92%;
+          transform:translateX(-50%) rotate(6deg);
+          width:3px;
+          height:var(--ribbon-h,80px);
+          background:linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.05));
+          border-radius:2px;
+          box-shadow:0 8px 14px rgba(0,0,0,0.35);
+          z-index:1;
+          filter:blur(0.2px);
+        }
+        /* small knot under balloon */
+        .balloon::before{
+          content:"";
+          position:absolute;
+          left:50%;
+          top:88%;
+          transform:translateX(-50%);
+          width:8px;height:6px;border-radius:2px;
+          background:rgba(0,0,0,0.12);
+          box-shadow:0 4px 10px rgba(0,0,0,0.35);
+        }
+      `;
+      document.head.appendChild(cssRibbon);
+
+      // Subtle horizontal movement to ribbon (tweak using keyframe)
+      const moveStyle = document.createElement('style');
+      moveStyle.innerHTML = `
+        @keyframes sway { 0%{transform:translateX(-50%) rotate(-6deg)} 50%{transform:translateX(-50%) rotate(6deg)} 100%{transform:translateX(-50%) rotate(-6deg)} }
+        .balloon::after{ animation: sway 1.1s ease-in-out infinite; }
+      `;
+      document.head.appendChild(moveStyle);
+
+      // CONFETTI function using canvas-confetti lib
+      const launch = (burst=220) => {
+        const duration = 1.8 * 1000;
+        const end = Date.now() + duration;
+        const defaults = { startVelocity: 35, spread: 90, ticks: 120, zIndex: 1000, colors: CONFIG.colorsConfetti };
+        (function frame(){
+          confetti(Object.assign({ particleCount: 3, angle: 60, origin: { x: 0.1 } }, defaults));
+          confetti(Object.assign({ particleCount: 3, angle: 120, origin: { x: 0.9 } }, defaults));
+          if(Date.now() < end) requestAnimationFrame(frame);
+        })();
+        confetti({ particleCount: burst, spread: 120, origin:{y:0.6}, colors:CONFIG.colorsConfetti });
+      };
+
+      // Buttons
+      const card = document.querySelector('.card');
+      const btn = document.getElementById('confettiBtn');
+      card.addEventListener('pointerdown', ()=>launch(180));
+      btn.addEventListener('click', ()=>launch(260));
+      setTimeout(()=>launch(260), 700);
+
+      // Share button
+      const shareBtn = document.getElementById('shareBtn');
+      if(navigator.share){
+        shareBtn.addEventListener('click', async ()=>{
+          try{
+            await navigator.share({
+              title:`Invitación - ${CONFIG.recipient}`,
+              text:`Te invito a mi graduación el 6 de diciembre a las 5:00 PM. ¡Te espero!`,
+              url:location.href
+            });
+          }catch(e){}
+        });
+      }else{
+        shareBtn.textContent='Copiar enlace';
+        shareBtn.addEventListener('click', async ()=>{
+          try{
+            await navigator.clipboard.writeText(location.href);
+            shareBtn.textContent='¡Enlace copiado!';
+            setTimeout(()=> shareBtn.textContent='Copiar enlace',1500);
+          }catch(e){}
+        });
+      }
+
+      // Accessibility: reduce motion handling
+      const media = window.matchMedia('(prefers-reduced-motion: reduce)');
+      if(media.matches){
+        document.querySelectorAll('.balloon,.diploma').forEach(el=>el.style.animation='none');
+      }
+    });
+  </script>
+</body>
+</html>
