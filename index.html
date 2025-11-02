@@ -1,307 +1,223 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Invitación de Graduación 🎓 William Pérez</title>
-  <meta name="description" content="Invitación de William Rodrigo Pérez Galán a su graduación de Licenciatura en Sistemas Informáticos Administrativos." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&family=Great+Vibes&display=swap" rel="stylesheet" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Invitación de Graduación 🎓 William Pérez</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&family=Great+Vibes&display=swap" rel="stylesheet" />
 
-  <style>
-    :root {
-      --bg:#0b1020;
-      --panel:#0f1724cc;
-      --gold:#c9a24a;
-      --accent:#e6d8ad;
-      --muted:#cfd8e3;
-      --glass: rgba(255,255,255,0.05);
-    }
+<style>
+:root {
+  --bg:#0b1020;
+  --panel:#0f1724cc;
+  --gold:#c9a24a;
+  --accent:#e6d8ad;
+  --muted:#cfd8e3;
+}
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
-    body {
-      font-family: 'Poppins', system-ui, sans-serif;
-      background:
-        radial-gradient(1200px 600px at 10% 20%, rgba(201,162,74,0.06), transparent 10%),
-        radial-gradient(1000px 500px at 90% 80%, rgba(230,216,173,0.04), transparent 12%),
-        var(--bg);
-      color: var(--muted);
-      padding: 2rem 1rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-height: 100vh;
-      overflow-x: hidden;
-      position: relative;
-    }
+body {
+  font-family: 'Poppins', system-ui, sans-serif;
+  background:
+    radial-gradient(1200px 600px at 10% 20%, rgba(201,162,74,0.06), transparent 10%),
+    radial-gradient(1000px 500px at 90% 80%, rgba(230,216,173,0.04), transparent 12%),
+    var(--bg);
+  color: var(--muted);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
 
-    .wrap { width: 100%; max-width: 920px; display: flex; justify-content: center; align-items: center; }
+.wrap { width: 100%; max-width: 920px; display: flex; justify-content: center; align-items: center; }
 
-    .card {
-      width: 100%;
-      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.025));
-      border-radius: 20px;
-      padding: 2rem;
-      backdrop-filter: blur(6px);
-      box-shadow: 0 20px 60px rgba(2,6,23,0.7);
-      border: 1px solid rgba(255,255,255,0.03);
-      position: relative;
-      overflow: visible;
-      z-index: 10;
-    }
+.card {
+  width: 100%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.025));
+  border-radius: 20px;
+  padding: 2rem;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 20px 60px rgba(2,6,23,0.7);
+  border: 1px solid rgba(255,255,255,0.03);
+  position: relative;
+  overflow: visible;
+  z-index: 10;
+}
 
-    .header {
-      display: flex;
-      gap: 1rem;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
+.header { display: flex; gap: 1rem; align-items: center; justify-content: space-between; flex-wrap: wrap; }
 
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: .6rem;
-      padding: .4rem .85rem;
-      border-radius: 999px;
-      background: linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
-      color: var(--accent);
-      font-weight: 700;
-      font-size: .95rem;
-      border: 1px solid rgba(255,255,255,0.03);
-    }
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  padding: .4rem .85rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  color: var(--accent);
+  font-weight: 700;
+  font-size: .95rem;
+  border: 1px solid rgba(255,255,255,0.03);
+}
 
-    .title {
-      font-size: clamp(1.5rem, 4vw, 2.4rem);
-      font-weight: 900;
-      color: var(--muted);
-      margin: 0;
-      text-align: center;
-    }
+.title {
+  font-size: clamp(1.5rem, 4vw, 2.4rem);
+  font-weight: 900;
+  color: var(--muted);
+  margin: 0;
+  text-align: center;
+}
+.title span.script {
+  display: inline-block;
+  font-family: 'Great Vibes', cursive;
+  color: var(--gold);
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
+  margin-top: .25rem;
+}
 
-    .title span.script {
-      display: block;
-      font-family: 'Great Vibes', cursive;
-      color: var(--gold);
-      font-size: clamp(1.8rem, 5vw, 2.6rem);
-      margin-top: .25rem;
-    }
+.degree { text-align: center; margin-top: .5rem; color: rgba(255,255,255,0.85); font-weight: 600; }
+.subtitle { color: rgba(255,255,255,0.72); font-weight: 600; margin-top: .55rem; text-align: center; display: block; }
 
-    .degree {
-      text-align: center;
-      margin-top: .5rem;
-      color: rgba(255,255,255,0.85);
-      font-weight: 600;
-    }
+.content { display: flex; gap: 2rem; margin-top: 1.2rem; align-items: flex-start; flex-wrap: wrap; }
+.leftCol { flex: 1; min-width: 280px; }
+.panel { background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-radius: 12px; padding: 1.2rem; border: 1px solid rgba(255,255,255,0.02); }
 
-    .subtitle {
-      color: rgba(255,255,255,0.72);
-      font-weight: 600;
-      margin-top: .55rem;
-      display: block;
-      text-align: center;
-    }
+.info p { margin: .4rem 0; font-size: 1rem; color: var(--muted); }
+.info p strong { color: var(--gold); font-weight: 700; }
 
-    .content {
-      display: flex;
-      gap: 2rem;
-      margin-top: 1.2rem;
-      align-items: flex-start;
-      flex-wrap: wrap;
-    }
+.message { margin-top: 1rem; line-height: 1.6; color: rgba(255,255,255,0.9); font-size: clamp(0.95rem, 2vw, 1rem); }
+.cta { display: flex; gap: .6rem; flex-wrap: wrap; margin-top: 1rem; justify-content: center; }
 
-    .leftCol { flex: 1; min-width: 280px; }
-    .rightCol { width: 320px; min-width: 240px; }
+.btn { border: 0; padding: .8rem 1.2rem; border-radius: 10px; font-weight: 700; cursor: pointer; box-shadow: 0 8px 20px rgba(2,6,23,0.6); transition: transform .2s; font-size: 1rem; }
+.btn:hover { transform: scale(1.05); }
+.btn.primary { background: linear-gradient(90deg, var(--gold), #f4d87a); color: #081021; }
+.btn.ghost { background: transparent; border: 1px solid rgba(255,255,255,0.06); color: var(--muted); }
 
-    .panel {
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      border-radius: 12px;
-      padding: 1.2rem;
-      border: 1px solid rgba(255,255,255,0.02);
-    }
+.footerNote { margin-top: 1rem; color: rgba(255,255,255,0.6); font-size: .95rem; text-align: center; }
 
-    .info p { margin: .4rem 0; font-size: 1rem; color: var(--muted); }
-    .info p strong { color: var(--gold); font-weight: 700; }
-
-    .message {
-      margin-top: 1rem;
-      line-height: 1.6;
-      color: rgba(255,255,255,0.9);
-      font-size: clamp(0.95rem, 2vw, 1rem);
-    }
-
-    .cta {
-      display: flex;
-      gap: .6rem;
-      flex-wrap: wrap;
-      margin-top: 1rem;
-      justify-content: center;
-    }
-
-    .btn {
-      border: 0;
-      padding: .8rem 1.2rem;
-      border-radius: 10px;
-      font-weight: 700;
-      cursor: pointer;
-      box-shadow: 0 8px 20px rgba(2,6,23,0.6);
-      transition: transform .2s;
-      font-size: 1rem;
-    }
-
-    .btn:hover { transform: scale(1.05); }
-    .btn.primary { background: linear-gradient(90deg, var(--gold), #f4d87a); color: #081021; }
-    .btn.ghost { background: transparent; border: 1px solid rgba(255,255,255,0.06); color: var(--muted); }
-
-    .footerNote { margin-top: 1rem; color: rgba(255,255,255,0.6); font-size: .95rem; text-align: center; }
-
-    /* Globos */
-    .balloon {
+/* Globos con cinta ondulante */
+.balloon {
   position: absolute;
   bottom: -150px;
   width: 40px;
   height: 55px;
   border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, #ffd86f, var(--gold));
   animation: floatUp linear infinite;
   opacity: 0.9;
   z-index: 2;
 }
-
 .balloon::after {
-  content: "";
-  position: absolute;
-  bottom: -25px;
-  left: 50%;
-  width: 2px;
-  height: 25px;
-  background: rgba(255, 255, 255, 0.3);
+  content:"";
+  position:absolute;
+  bottom:-35px;
+  left:50%;
+  width:2px;
+  height:35px;
+  background: rgba(255,255,255,0.4);
+  border-radius:1px;
   transform: translateX(-50%);
-  border-radius: 1px;
+  animation: ribbonWave 2s ease-in-out infinite alternate;
 }
 
+@keyframes floatUp { 
+  0% { transform: translateY(0) scale(1); opacity: 1; } 
+  100% { transform: translateY(-110vh) scale(1.05); opacity: 0; } 
+}
 
-    @keyframes floatUp {
-      0% { transform: translateY(0) scale(1); opacity: 1; }
-      100% { transform: translateY(-110vh) scale(1.1); opacity: 0; }
-    }
+@keyframes ribbonWave {
+  0% { transform: translateX(-50%) rotate(0deg); }
+  100% { transform: translateX(-50%) rotate(10deg); }
+}
 
-    @media (max-width:768px) { .btn { width: 100%; justify-content: center; } }
-  </style>
+/* Responsive */
+@media (max-width:1024px) { .content { flex-direction: column; align-items: center; } }
+@media (max-width:768px) { .btn { width: 100%; justify-content: center; } }
+@media (max-width:480px) {
+  body { padding: .5rem; }
+  .card { padding: 1rem; }
+  .footerNote { font-size: .85rem; }
+  .title { font-size: 1.5rem; }
+  .title span.script { font-size: 1.8rem; }
+}
+</style>
 </head>
 <body>
-  <div class="decor"></div>
+<div class="decor"></div>
 
-  <div class="wrap">
-    <section class="card" role="main" aria-labelledby="title">
-      <div class="header">
-        <div class="left" style="width:100%">
-          <div class="badge">📅 6 de diciembre • 5:00 PM</div>
-          <h1 class="title" id="title">🎓 Invitación Especial 🎓 
-            <span class="script">William Rodrigo Pérez Galán</span>
-          </h1>
-          <div class="degree">Licenciatura en Sistemas Informáticos Administrativos</div>
-          <div class="subtitle">¡Un logro para celebrar!</div>
+<div class="wrap">
+  <section class="card" role="main" aria-labelledby="title">
+    <div class="header">
+      <div class="left" style="width:100%">
+        <div class="badge">📅 6 de diciembre • 5:00 PM</div>
+        <h1 class="title" id="title">🎓 Invitación Especial 🎓 
+          <span class="script">William Rodrigo Pérez Galán</span>
+        </h1>
+        <div class="degree">Licenciatura en Sistemas Informáticos Administrativos</div>
+        <div class="subtitle">¡Un logro para celebrar!</div>
+      </div>
+    </div>
+
+    <div class="content" role="region" aria-label="Detalles de invitación">
+      <div class="leftCol">
+        <div class="panel info">
+          <p><strong>Fecha:</strong> 6 de diciembre</p>
+          <p><strong>Hora:</strong> 5:00 PM</p>
+          <p><strong>Lugar:</strong> Colonia Vuelta Grande, Mi Casa</p>
+
+          <div class="message">
+            Con mucha alegría, te invito a celebrar conmigo este logro tan importante.
+            Tu compañía hará de este día un recuerdo inolvidable. ¡Será un honor contar contigo para celebrar este momento! 💛 
+          </div>
+
+          <div class="cta">
+            <button class="btn primary" id="confettiBtn">🎉 Celebrar ahora</button>
+          </div>
+          <div class="footerNote">Toca la tarjeta o el botón para un pequeño lanzamiento de celebración 🎊</div>
         </div>
       </div>
+    </div>
+  </section>
+</div>
 
-      <div class="content" role="region" aria-label="Detalles de invitación">
-        <div class="leftCol">
-          <div class="panel info">
-            <p><strong>Fecha:</strong> 6 de diciembre</p>
-            <p><strong>Hora:</strong> 5:00 PM</p>
-            <p><strong>Lugar:</strong> Colonia Vuelta Grande, Mi Casa</p>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const confettiBtn = document.getElementById("confettiBtn");
+  const card = document.querySelector(".card");
+  const decor = document.querySelector(".decor");
 
-            <div class="message">
-              Con mucha alegría, te invito a celebrar conmigo este logro tan importante.
-              Tu compañía hará de este día un recuerdo inolvidable. ¡Será un honor contar contigo para celebrar este momento! 💛 
-            </div>
+  // 🎉 Confeti
+  const launch = () => confetti({ particleCount: 180, spread: 100, origin: { y: 0.6 } });
+  card.addEventListener("click", launch);
+  confettiBtn.addEventListener("click", launch);
 
-            <div class="cta">
-              <button class="btn primary" id="confettiBtn">🎉 Celebrar ahora</button>
-              <!-- <button class="btn ghost" id="shareBtn">Compartir invitación</button> -->
-            </div>
-            <div class="footerNote">Toca la tarjeta o el botón para un pequeño lanzamiento de celebración 🎊</div>
-          </div>
-        </div>
+  // 🎈 Globos flotantes con colores de graduación
+  function createBalloon() {
+    const balloon = document.createElement("div");
+    balloon.classList.add("balloon");
+    const size = Math.random() * 30 + 40;
+    balloon.style.width = size + "px";
+    balloon.style.height = size * 1.4 + "px";
+    balloon.style.left = Math.random() * 100 + "%";
 
-        <!-- <aside class="rightCol">
-          <div class="panel" style="text-align:center">
-            <div style="font-size:1.1rem;font-weight:700;color:var(--gold)">Graduación</div>
-            <div style="font-size:.95rem;color:rgba(255,255,255,0.75);">Licenciatura en Sistemas Informáticos Administrativos</div>
-            <div style="margin-top:.8rem;color:rgba(255,255,255,0.8)">William Rodrigo Pérez Galán</div>
-            <div style="margin-top:1rem;font-size:.85rem;color:rgba(255,255,255,0.7)">Colonia Vuelta Grande, Mi Casa</div>
-          </div>
-        </aside> -->
-      </div>
-    </section>
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const confettiBtn = document.getElementById("confettiBtn");
-      const shareBtn = document.getElementById("shareBtn");
-      const card = document.querySelector(".card");
-      const decor = document.querySelector(".decor");
-
-      // 🎉 Confeti
-      const launch = () => confetti({ particleCount: 180, spread: 100, origin: { y: 0.6 } });
-      card.addEventListener("click", launch);
-      confettiBtn.addEventListener("click", launch);
-
-   // 🎈 Globos flotantes (colores de graduación)
-    function createBalloon() {
-      const balloon = document.createElement("div");
-      balloon.classList.add("balloon");
-      
-      const size = Math.random() * 30 + 40;
-      balloon.style.width = size + "px";
-      balloon.style.height = size * 1.4 + "px";
-      balloon.style.left = Math.random() * 100 + "%";
-      
-      // Paleta elegante: negro, dorado y plateado
-      const colors = [
-        "radial-gradient(circle at 30% 30%, #ffd86f, #c9a24a)",  // dorado
-        "radial-gradient(circle at 30% 30%, #d7d7d7, #a0a0a0)",  // plateado
-        "radial-gradient(circle at 30% 30%, #444, #000)"          // negro
-      ];
-      balloon.style.background = colors[Math.floor(Math.random() * colors.length)];
-
-      // Animación aleatoria
-      balloon.style.animationDuration = 6 + Math.random() * 6 + "s";
-      balloon.style.opacity = 0.9;
-      balloon.style.zIndex = 2;
-
-      decor.appendChild(balloon);
-      setTimeout(() => balloon.remove(), 12000);
-    }
-    setInterval(createBalloon, 1000);
-
-
-      // 🔗 Compartir
-      shareBtn.addEventListener("click", async () => {
-        const shareData = {
-          title: "🎓 Invitación de Graduación de William Pérez",
-          text: "Te invito a celebrar conmigo este gran logro. 🎓💛",
-          url: window.location.href
-        };
-
-        if (navigator.share) {
-          try {
-            await navigator.share(shareData);
-          } catch (err) {
-            console.log("Compartir cancelado o falló:", err);
-          }
-        } else {
-          // Si el navegador no soporta la API de compartir
-          navigator.clipboard.writeText(shareData.url);
-          alert("🔗 Enlace copiado para compartir: " + shareData.url);
-        }
-      });
-    });
-  </script>
+    const colors = [
+      "radial-gradient(circle at 30% 30%, #ffd86f, #c9a24a)", // dorado
+      "radial-gradient(circle at 30% 30%, #d7d7d7, #a0a0a0)", // plateado
+      "radial-gradient(circle at 30% 30%, #444, #000)"        // negro
+    ];
+    balloon.style.background = colors[Math.floor(Math.random() * colors.length)];
+    balloon.style.animationDuration = 6 + Math.random() * 6 + "s";
+    balloon.style.opacity = 0.9;
+    decor.appendChild(balloon);
+    setTimeout(() => balloon.remove(), 12000);
+  }
+  setInterval(createBalloon, 1000);
+});
+</script>
 </body>
 </html>
