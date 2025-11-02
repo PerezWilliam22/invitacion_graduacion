@@ -34,17 +34,10 @@
       align-items: center;
       min-height: 100vh;
       overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
+      position: relative;
     }
 
-    .wrap {
-      width: 100%;
-      max-width: 920px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+    .wrap { width: 100%; max-width: 920px; display: flex; justify-content: center; align-items: center; }
 
     .card {
       width: 100%;
@@ -56,6 +49,7 @@
       border: 1px solid rgba(255,255,255,0.03);
       position: relative;
       overflow: visible;
+      z-index: 10;
     }
 
     .header {
@@ -118,15 +112,8 @@
       flex-wrap: wrap;
     }
 
-    .leftCol {
-      flex: 1;
-      min-width: 280px;
-    }
-
-    .rightCol {
-      width: 320px;
-      min-width: 240px;
-    }
+    .leftCol { flex: 1; min-width: 280px; }
+    .rightCol { width: 320px; min-width: 240px; }
 
     .panel {
       background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
@@ -135,16 +122,8 @@
       border: 1px solid rgba(255,255,255,0.02);
     }
 
-    .info p {
-      margin: .4rem 0;
-      font-size: 1rem;
-      color: var(--muted);
-    }
-
-    .info p strong {
-      color: var(--gold);
-      font-weight: 700;
-    }
+    .info p { margin: .4rem 0; font-size: 1rem; color: var(--muted); }
+    .info p strong { color: var(--gold); font-weight: 700; }
 
     .message {
       margin-top: 1rem;
@@ -173,60 +152,43 @@
     }
 
     .btn:hover { transform: scale(1.05); }
+    .btn.primary { background: linear-gradient(90deg, var(--gold), #f4d87a); color: #081021; }
+    .btn.ghost { background: transparent; border: 1px solid rgba(255,255,255,0.06); color: var(--muted); }
 
-    .btn.primary {
-      background: linear-gradient(90deg, var(--gold), #f4d87a);
-      color: #081021;
+    .footerNote { margin-top: 1rem; color: rgba(255,255,255,0.6); font-size: .95rem; text-align: center; }
+
+    /* Globos */
+    .balloon {
+  position: absolute;
+  bottom: -150px;
+  width: 40px;
+  height: 55px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #ffd86f, var(--gold));
+  animation: floatUp linear infinite;
+  opacity: 0.9;
+  z-index: 2;
+}
+
+.balloon::after {
+  content: "";
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  width: 2px;
+  height: 25px;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateX(-50%);
+  border-radius: 1px;
+}
+
+
+    @keyframes floatUp {
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      100% { transform: translateY(-110vh) scale(1.1); opacity: 0; }
     }
 
-    .btn.ghost {
-      background: transparent;
-      border: 1px solid rgba(255,255,255,0.06);
-      color: var(--muted);
-    }
-
-    .footerNote {
-      margin-top: 1rem;
-      color: rgba(255,255,255,0.6);
-      font-size: .95rem;
-      text-align: center;
-    }
-
-    /* decorativos */
-    .decor {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      overflow: hidden;
-    }
-
-    /* Responsive ajustes */
-    @media (max-width: 1024px) {
-      .content {
-        flex-direction: column;
-        align-items: center;
-      }
-      .rightCol {
-        width: 100%;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .card {
-        padding: 1.5rem;
-      }
-      .btn {
-        width: 100%;
-        justify-content: center;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .badge { font-size: .85rem; padding: .3rem .6rem; }
-      .message { text-align: center; }
-      .info p { text-align: center; font-size: .95rem; }
-      .footerNote { font-size: .85rem; }
-    }
+    @media (max-width:768px) { .btn { width: 100%; justify-content: center; } }
   </style>
 </head>
 <body>
@@ -237,7 +199,7 @@
       <div class="header">
         <div class="left" style="width:100%">
           <div class="badge">📅 6 de diciembre • 5:00 PM</div>
-          <h1 class="title" id="title">🎓 Invitación Especial  
+          <h1 class="title" id="title">🎓 Invitación Especial 🎓 
             <span class="script">William Rodrigo Pérez Galán</span>
           </h1>
           <div class="degree">Licenciatura en Sistemas Informáticos Administrativos</div>
@@ -254,39 +216,92 @@
 
             <div class="message">
               Con mucha alegría, te invito a celebrar conmigo este logro tan importante.
-              Tu compañía hará de este día un recuerdo inolvidable. ¡Te espero en mi casa! 💛
+              Tu compañía hará de este día un recuerdo inolvidable. ¡Será un honor contar contigo para celebrar este momento! 💛 
             </div>
 
             <div class="cta">
               <button class="btn primary" id="confettiBtn">🎉 Celebrar ahora</button>
-              <button class="btn ghost" id="shareBtn">Compartir invitación</button>
+              <!-- <button class="btn ghost" id="shareBtn">Compartir invitación</button> -->
             </div>
             <div class="footerNote">Toca la tarjeta o el botón para un pequeño lanzamiento de celebración 🎊</div>
           </div>
         </div>
 
-        <aside class="rightCol">
+        <!-- <aside class="rightCol">
           <div class="panel" style="text-align:center">
             <div style="font-size:1.1rem;font-weight:700;color:var(--gold)">Graduación</div>
             <div style="font-size:.95rem;color:rgba(255,255,255,0.75);">Licenciatura en Sistemas Informáticos Administrativos</div>
             <div style="margin-top:.8rem;color:rgba(255,255,255,0.8)">William Rodrigo Pérez Galán</div>
             <div style="margin-top:1rem;font-size:.85rem;color:rgba(255,255,255,0.7)">Colonia Vuelta Grande, Mi Casa</div>
           </div>
-        </aside>
+        </aside> -->
       </div>
     </section>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const confettiBtn = document.getElementById("confettiBtn");
+      const shareBtn = document.getElementById("shareBtn");
       const card = document.querySelector(".card");
+      const decor = document.querySelector(".decor");
+
+      // 🎉 Confeti
       const launch = () => confetti({ particleCount: 180, spread: 100, origin: { y: 0.6 } });
       card.addEventListener("click", launch);
       confettiBtn.addEventListener("click", launch);
+
+   // 🎈 Globos flotantes (colores de graduación)
+    function createBalloon() {
+      const balloon = document.createElement("div");
+      balloon.classList.add("balloon");
+      
+      const size = Math.random() * 30 + 40;
+      balloon.style.width = size + "px";
+      balloon.style.height = size * 1.4 + "px";
+      balloon.style.left = Math.random() * 100 + "%";
+      
+      // Paleta elegante: negro, dorado y plateado
+      const colors = [
+        "radial-gradient(circle at 30% 30%, #ffd86f, #c9a24a)",  // dorado
+        "radial-gradient(circle at 30% 30%, #d7d7d7, #a0a0a0)",  // plateado
+        "radial-gradient(circle at 30% 30%, #444, #000)"          // negro
+      ];
+      balloon.style.background = colors[Math.floor(Math.random() * colors.length)];
+
+      // Animación aleatoria
+      balloon.style.animationDuration = 6 + Math.random() * 6 + "s";
+      balloon.style.opacity = 0.9;
+      balloon.style.zIndex = 2;
+
+      decor.appendChild(balloon);
+      setTimeout(() => balloon.remove(), 12000);
+    }
+    setInterval(createBalloon, 1000);
+
+
+      // 🔗 Compartir
+      shareBtn.addEventListener("click", async () => {
+        const shareData = {
+          title: "🎓 Invitación de Graduación de William Pérez",
+          text: "Te invito a celebrar conmigo este gran logro. 🎓💛",
+          url: window.location.href
+        };
+
+        if (navigator.share) {
+          try {
+            await navigator.share(shareData);
+          } catch (err) {
+            console.log("Compartir cancelado o falló:", err);
+          }
+        } else {
+          // Si el navegador no soporta la API de compartir
+          navigator.clipboard.writeText(shareData.url);
+          alert("🔗 Enlace copiado para compartir: " + shareData.url);
+        }
+      });
     });
   </script>
 </body>
 </html>
-
