@@ -10,11 +10,17 @@
 
 <style>
 :root {
-  --bg:#0b1020;
-  --panel:#0f1724cc;
-  --gold:#c9a24a;
-  --accent:#e6d8ad;
-  --muted:#cfd8e3;
+  /* --- NUEVA PALETA MODERNA --- */
+  /* Fondo más oscuro y rico */
+  --bg: #020617;
+  /* Paneles con un tono azul más limpio */
+  --panel: rgba(15, 23, 42, 0.85);
+  /* Dorado más eléctrico y vibrante */
+  --gold: #FBBF24;
+  /* Acento casi blanco para mayor nitidez */
+  --accent: #F8FAFC;
+  /* Texto secundario más gris-azulado limpio */
+  --muted: #CBD5E1;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -22,8 +28,9 @@
 body {
   font-family: 'Poppins', system-ui, sans-serif;
   background:
-    radial-gradient(1200px 600px at 10% 20%, rgba(201,162,74,0.06), transparent 10%),
-    radial-gradient(1000px 500px at 90% 80%, rgba(230,216,173,0.04), transparent 12%),
+    /* Gradientes ajustados a los nuevos colores */
+    radial-gradient(1200px 600px at 10% 20%, rgba(251, 191, 36, 0.08), transparent 10%),
+    radial-gradient(1000px 500px at 90% 80%, rgba(248, 250, 252, 0.05), transparent 12%),
     var(--bg);
   color: var(--muted);
   padding: 1rem;
@@ -39,12 +46,13 @@ body {
 
 .card {
   width: 100%;
-  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.025));
+  /* Fondo de tarjeta más cristalino */
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
   border-radius: 20px;
   padding: 2rem;
-  backdrop-filter: blur(6px);
-  box-shadow: 0 20px 60px rgba(2,6,23,0.7);
-  border: 1px solid rgba(255,255,255,0.03);
+  backdrop-filter: blur(10px); /* Un poco más de desenfoque */
+  box-shadow: 0 25px 70px rgba(0,0,0,0.5); /* Sombra más profunda y moderna */
+  border: 1px solid rgba(255,255,255,0.05);
   position: relative;
   overflow: visible;
   z-index: 10;
@@ -58,17 +66,17 @@ body {
   gap: .6rem;
   padding: .4rem .85rem;
   border-radius: 999px;
-  background: linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  background: linear-gradient(90deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
   color: var(--accent);
   font-weight: 700;
   font-size: .95rem;
-  border: 1px solid rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.05);
 }
 
 .title {
   font-size: clamp(1.5rem, 4vw, 2.4rem);
   font-weight: 900;
-  color: var(--muted);
+  color: #ffffff; /* Título principal en blanco puro para contraste */
   margin: 0;
   text-align: center;
 }
@@ -78,27 +86,81 @@ body {
   color: var(--gold);
   font-size: clamp(1.8rem, 5vw, 2.6rem);
   margin-top: .25rem;
+  /* Sutil brillo en el texto dorado */
+  text-shadow: 0 2px 15px rgba(251, 191, 36, 0.3);
 }
 
-.degree { text-align: center; margin-top: .5rem; color: rgba(255,255,255,0.85); font-weight: 600; }
-.subtitle { color: rgba(255,255,255,0.72); font-weight: 600; margin-top: .55rem; text-align: center; display: block; }
+.degree { text-align: center; margin-top: .5rem; color: var(--accent); font-weight: 600; }
+.subtitle { color: rgba(255,255,255,0.8); font-weight: 600; margin-top: .55rem; text-align: center; display: block; }
 
 .content { display: flex; gap: 2rem; margin-top: 1.2rem; align-items: flex-start; flex-wrap: wrap; }
 .leftCol { flex: 1; min-width: 280px; }
-.panel { background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-radius: 12px; padding: 1.2rem; border: 1px solid rgba(255,255,255,0.02); }
+.panel { background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01)); border-radius: 12px; padding: 1.2rem; border: 1px solid rgba(255,255,255,0.03); }
 
 .info p { margin: .4rem 0; font-size: 1rem; color: var(--muted); }
-.info p strong { color: var(--gold); font-weight: 700; }
+.info p strong { color: var(--accent); font-weight: 700; }
 
-.message { margin-top: 1rem; line-height: 1.6; color: rgba(255,255,255,0.9); font-size: clamp(0.95rem, 2vw, 1rem); }
+.message { margin-top: 1rem; line-height: 1.6; color: rgba(255,255,255,0.95); font-size: clamp(0.95rem, 2vw, 1rem); }
 .cta { display: flex; gap: .6rem; flex-wrap: wrap; margin-top: 1rem; justify-content: center; }
 
-.btn { border: 0; padding: .8rem 1.2rem; border-radius: 10px; font-weight: 700; cursor: pointer; box-shadow: 0 8px 20px rgba(2,6,23,0.6); transition: transform .2s; font-size: 1rem; }
-.btn:hover { transform: scale(1.05); }
-.btn.primary { background: linear-gradient(90deg, var(--gold), #f4d87a); color: #081021; }
+.btn { border: 0; padding: .8rem 1.2rem; border-radius: 10px; font-weight: 700; cursor: pointer; box-shadow: 0 8px 20px rgba(0,0,0,0.4); transition: transform .2s, box-shadow .2s; font-size: 1rem; }
+.btn:hover { transform: scale(1.05); box-shadow: 0 12px 25px rgba(251, 191, 36, 0.3); }
+.btn.primary { 
+  /* Gradiente dorado más vibrante */
+  background: linear-gradient(90deg, var(--gold), #f59e0b); 
+  color: #020617; 
+}
 .btn.ghost { background: transparent; border: 1px solid rgba(255,255,255,0.06); color: var(--muted); }
 
 .footerNote { margin-top: 1rem; color: rgba(255,255,255,0.6); font-size: .95rem; text-align: center; }
+
+/* 🎁 Opciones de regalo */
+.gift-section {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.gift-section h3 {
+  color: var(--gold);
+  font-size: 1.2rem;
+  margin-bottom: .7rem;
+  font-weight: 700;
+}
+
+.gift-options {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.gift {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+  padding: 1rem .8rem;
+  border-radius: 12px;
+  width: 130px;
+  border: 1px solid rgba(255,255,255,0.05);
+  backdrop-filter: blur(3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  transition: transform .2s, border-color .2s;
+}
+
+.gift:hover { transform: scale(1.06); border-color: var(--gold); }
+
+.gift .icon {
+  font-size: 2.3rem;
+  margin-bottom: .4rem;
+}
+
+.gift p {
+  color: var(--muted);
+  font-weight: 600;
+  margin: 0;
+  font-size: .95rem;
+}
 
 /* Globos con cinta ondulante */
 .balloon {
@@ -118,14 +180,14 @@ body {
   left:50%;
   width:2px;
   height:35px;
-  background: rgba(255,255,255,0.4);
+  background: rgba(255,255,255,0.3);
   border-radius:1px;
   transform: translateX(-50%);
   animation: ribbonWave 2s ease-in-out infinite alternate;
 }
 
 @keyframes floatUp { 
-  0% { transform: translateY(0) scale(1); opacity: 1; } 
+  0% { transform: translateY(0) scale(1); opacity: 0.8; } 
   100% { transform: translateY(-110vh) scale(1.05); opacity: 0; } 
 }
 
@@ -177,7 +239,20 @@ body {
           <div class="cta">
             <button class="btn primary" id="confettiBtn">🎉 Celebrar ahora</button>
           </div>
+
           <div class="footerNote">Toca la tarjeta o el botón para un pequeño lanzamiento de celebración 🎊</div>
+
+          <div class="gift-section">
+            <div class="gift-options">
+              <div class="gift">
+                <div class="icon">✉️</div>
+                </div>
+                  <div class="gift">
+                <div class="icon">🎁</div>
+                </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
@@ -191,12 +266,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const card = document.querySelector(".card");
   const decor = document.querySelector(".decor");
 
-  // 🎉 Confeti
-  const launch = () => confetti({ particleCount: 180, spread: 100, origin: { y: 0.6 } });
+  // 🎉 Confeti con colores MODERNOS (el que te gustó)
+  const launch = () => confetti({ 
+      particleCount: 180, 
+      spread: 120, 
+      origin: { y: 0.6 },
+      colors: ['#FBBF24', '#F59E0B', '#ffffff', '#CBD5E1'], // Paleta nueva
+      ticks: 250
+  });
   card.addEventListener("click", launch);
   confettiBtn.addEventListener("click", launch);
 
-  // 🎈 Globos flotantes con colores de graduación
+  // 🎈 Globos flotantes con colores ACTUALIZADOS
   function createBalloon() {
     const balloon = document.createElement("div");
     balloon.classList.add("balloon");
@@ -206,13 +287,16 @@ document.addEventListener("DOMContentLoaded", () => {
     balloon.style.left = Math.random() * 100 + "%";
 
     const colors = [
-      "radial-gradient(circle at 30% 30%, #ffd86f, #c9a24a)", // dorado
-      "radial-gradient(circle at 30% 30%, #d7d7d7, #a0a0a0)", // plateado
-      "radial-gradient(circle at 30% 30%, #444, #000)"        // negro
+      // Nuevo dorado vibrante
+      "radial-gradient(circle at 30% 30%, #FCD34D, #F59E0B)",
+      // Blanco/Plata limpio
+      "radial-gradient(circle at 30% 30%, #F8FAFC, #94A3B8)",
+      // Azul oscuro profundo
+      "radial-gradient(circle at 30% 30%, #334155, #020617)"
     ];
     balloon.style.background = colors[Math.floor(Math.random() * colors.length)];
     balloon.style.animationDuration = 6 + Math.random() * 6 + "s";
-    balloon.style.opacity = 0.9;
+    balloon.style.opacity = 0.85;
     decor.appendChild(balloon);
     setTimeout(() => balloon.remove(), 12000);
   }
